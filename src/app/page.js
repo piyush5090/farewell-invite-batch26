@@ -10,15 +10,11 @@ import {
   Utensils, 
   Users, 
   Heart, 
-  UserCheck, 
-  Flame, 
-  Camera, 
   ShieldAlert, 
   CheckCircle2, 
   Phone, 
   MessageCircle, 
   ArrowRight,
-  Award,
   Crown
 } from "lucide-react";
 import ParticleBackground from "@/components/ParticleBackground";
@@ -384,6 +380,15 @@ export default function Home() {
                     <Phone className="w-4 h-4 fill-current" />
                     Call Nilesh: 7773095684
                   </a>
+                  <a
+                    href="https://wa.me/917773095684"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white font-extrabold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-102"
+                  >
+                    <MessageCircle className="w-4 h-4 fill-current" />
+                    WhatsApp Nilesh
+                  </a>
                 </div>
               </motion.div>
 
@@ -393,18 +398,8 @@ export default function Home() {
                 initial="initial"
                 whileInView="whileInView"
                 viewport={{ once: true }}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2"
+                className="grid grid-cols-1 md:grid-cols-1 gap-4 mt-2"
               >
-                {/* Marketing Head */}
-                <motion.div
-                  variants={fadeInUp}
-                  className="p-5 rounded-2xl glass-panel border-white/5 hover:border-purple-500/10 text-center transition-all duration-300"
-                >
-                  <Award className="w-5 h-5 text-purple-400 mx-auto mb-2" />
-                  <span className="text-slate-400 text-xs font-semibold uppercase tracking-wider block">Marketing Head</span>
-                  <h4 className="text-white font-bold text-base mt-1">PG (CSE)</h4>
-                </motion.div>
-
                 {/* Anchor */}
                 <motion.div
                   variants={fadeInUp}
