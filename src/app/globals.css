@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-light: #fef08a;
+  --color-gold: #eab308;
+  --color-gold-dark: #ca8a04;
+  --color-gold-premium: #d4af37;
+  --color-gold-bright: #ffd700;
+  
+  --color-purple-light: #c084fc;
+  --color-purple-brand: #9333ea;
+  --color-purple-dark: #120124;
+  --color-purple-deep: #03000a;
+  
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-float-slow: float 12s ease-in-out infinite;
+  --animate-float-fast: float 5s ease-in-out infinite;
+  --animate-pulse-slow: pulse-slow 8s ease-in-out infinite;
+  --animate-glow-gold: glow-gold 3s ease-in-out infinite;
+  --animate-aurora: aurora 20s linear infinite;
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) translateX(10px) rotate(3deg);
+    }
+  }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.15; }
+    50% { opacity: 0.4; }
+  }
+  @keyframes glow-gold {
+    0%, 100% {
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+      border-color: rgba(212, 175, 55, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
+      border-color: rgba(212, 175, 55, 0.5);
+    }
+  }
+  @keyframes aurora {
+    from {
+      background-position: 0% 50%;
+    }
+    to {
+      background-position: 200% 50%;
+    }
+  }
+}
+
+:root {
+  --background: #03000a;
+  --foreground: #f8fafc;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #03000a;
+}
+::-webkit-scrollbar-thumb {
+  background: #270c4a;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9333ea;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Glassmorphism Presets */
+.glass-panel {
+  background: rgba(25, 10, 45, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-gold {
+  background: rgba(212, 175, 55, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.glass-panel-purple {
+  background: rgba(147, 51, 234, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(147, 51, 234, 0.15);
+}
+
+/* Metallic Text Gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fef08a 0%, #d4af37 50%, #fef08a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-purple-gradient {
+  background: linear-gradient(135deg, #e9d5ff 0%, #a855f7 50%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Particle effect container */
+.particle-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
