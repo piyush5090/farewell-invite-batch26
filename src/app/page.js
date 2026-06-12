@@ -126,9 +126,12 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="text-xl md:text-3xl text-slate-400 max-w-2xl font-light leading-tight mt-4"
+              className="text-xl md:text-3xl text-slate-400 max-w-2xl font-light leading-tight mt-4 flex flex-col gap-4"
             >
-              One Last Night. <span className="marker-underline text-white font-medium italic">Endless Memories.</span>
+              <span>One Last Night. <span className="marker-underline text-white font-medium italic">Endless Memories.</span></span>
+              <span className="text-sm md:text-base font-bold tracking-[0.2em] text-amber-500/80 uppercase">
+                &quot;College didn&apos;t give you the Perfect Ending, Let&apos;s create one by ourselves.&quot;
+              </span>
             </motion.p>
 
             {/* Premium CTA Row */}
@@ -166,13 +169,13 @@ export default function Home() {
         </section>
 
 
-        {/* 2. TBA CARDS - MINIMAL & MODERN */}
+        {/* 2. DATE & VENUE - UPDATED */}
         <section className="py-32 px-4 bg-white/[0.02] border-y border-white/5">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
-              { label: "WHEN", value: "TO BE ANNOUNCED", icon: Calendar, accent: "text-amber-500" },
-              { label: "WHERE", value: "TO BE ANNOUNCED", icon: MapPin, accent: "text-rose-500" },
-              { label: "HOST", value: "TO BE ANNOUNCED", icon: Mic, accent: "text-cyan-500" }
+              { label: "WHEN", value: "21 JUNE 2026", sub: "SUNDAY", icon: Calendar, accent: "text-amber-500", highlight: true },
+              { label: "WHERE", value: "PRIME VENUE", sub: "REVEALING SOON", icon: MapPin, accent: "text-rose-500", glow: true },
+              { label: "HOST", value: "TO BE ANNOUNCED", sub: "STAY TUNED", icon: Mic, accent: "text-cyan-500" }
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -188,9 +191,14 @@ export default function Home() {
                     </div>
                     <span className="font-black tracking-[0.3em] text-xs text-slate-500 uppercase">{item.label}</span>
                   </div>
-                  <h3 className="text-3xl font-black group-hover:text-amber-400 transition-colors tracking-tight leading-none">
+                  <h3 className={`text-3xl font-black transition-colors tracking-tight leading-none ${item.highlight ? 'text-amber-400' : 'group-hover:text-amber-400'} ${item.glow ? 'animate-glow-gold' : ''}`}>
                     {item.value}
                   </h3>
+                  {item.sub && (
+                    <p className={`mt-2 font-bold text-sm tracking-widest ${item.glow ? 'text-amber-500 animate-pulse' : 'text-slate-500 uppercase'}`}>
+                      {item.sub}
+                    </p>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -217,7 +225,7 @@ export default function Home() {
               {[
                 { title: "DJ NIGHT", icon: Music, color: "bg-fuchsia-500", desc: "Lose yourself to absolute bass, beats, and tracks curated by our guest DJ." },
                 { title: "DANCE FLOOR", icon: Sparkles, color: "bg-amber-500", desc: "A premium energetic space designed for you to dance all night long." },
-                { title: "PREMIUM FOOD", icon: Utensils, color: "bg-rose-500", desc: "Indulge in a premium multi-cuisine dinner buffet crafted to perfection." },
+                { title: "PRIME FOOD", icon: Utensils, color: "bg-rose-500", desc: "Indulge in a premium multi-cuisine dinner buffet crafted to perfection.", highlight: true },
                 { title: "NETWORKING", icon: Users, color: "bg-cyan-500", desc: "Reconnect, chat, and forge lifelong links with your classmates." },
                 { title: "MEMORIES", icon: Heart, color: "bg-purple-500", desc: "Capture beautiful moments that will stay with you long after graduation." }
               ].map((card, idx) => (
@@ -227,7 +235,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, rotate: idx % 2 === 0 ? -2 : 2, scale: 1 }}
                   whileHover={{ rotate: 0, scale: 1.05, zIndex: 20 }}
                   viewport={{ once: true }}
-                  className="polaroid-card group cursor-pointer"
+                  className={`polaroid-card group cursor-pointer ${card.highlight ? 'ring-4 ring-amber-500/30' : ''}`}
                 >
                   <div className={`aspect-square w-full mb-4 flex items-center justify-center ${card.color} rounded-sm group-hover:animate-pulse transition-transform`}>
                     <card.icon className="w-16 h-16 text-white drop-shadow-lg" />
@@ -262,7 +270,7 @@ export default function Home() {
                 <div className="space-y-8">
                   {[
                     "Only MIT & MITM B.Tech Batch 2026 Students Allowed",
-                    "Event Date Will Be Announced Soon",
+                    "Event Date: 21st June 2026 (Sunday)",
                     "Prime Venue In Ujjain To Be Disclosed Soon",
                     "Id will be required for registration",
                     "Entry pass will be provided after registration which is imp for entry",
@@ -287,14 +295,15 @@ export default function Home() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="relative p-12 bg-rose-600 text-white rounded-3xl sticker mt-12 lg:mt-24"
+                className="relative p-12 bg-rose-600 text-white rounded-3xl sticker mt-12 lg:mt-24 shadow-[0_0_50px_rgba(225,29,72,0.3)]"
               >
                 <ShieldAlert className="w-12 h-12 mb-8" />
                 <h3 className="text-4xl font-black uppercase tracking-tighter mb-8 leading-none">
-                  Zero <br/>Tolerance Policy
+                  Strict Security <br/>& Policy
                 </h3>
                 <ul className="space-y-4">
                   {[
+                    "Professional Bouncers for Security",
                     "Tobacco Strictly Prohibited",
                     "Cigarettes Strictly Prohibited",
                     "Alcohol Strictly Prohibited",
@@ -333,6 +342,17 @@ export default function Home() {
                 </div>
                 
                 <div className="relative flex flex-col items-center">
+                  <div className="relative w-32 h-32 mb-6 group-hover:scale-110 transition-transform duration-500">
+                    <div className="absolute inset-0 bg-amber-500 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform" />
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-amber-500 shadow-2xl bg-zinc-800">
+                      <Image 
+                        src="/nilesh.png" 
+                        alt="Nilesh Panchal" 
+                        fill 
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
                   <div className="w-16 h-1 bg-amber-500 mb-8 rounded-full" />
                   <span className="text-amber-500 font-black text-xs tracking-[0.4em] uppercase mb-2">HEAD ORGANIZER</span>
                   <h3 className="text-5xl font-black tracking-tighter text-white uppercase mb-1">Nilesh Panchal</h3>
