@@ -132,6 +132,9 @@ export default function Home() {
               <span className="text-sm md:text-base font-bold tracking-[0.2em] text-amber-500/80 uppercase">
                 &quot;College didn&apos;t give you the Perfect Ending, Let&apos;s create one by ourselves.&quot;
               </span>
+              <span className="text-base md:text-lg text-purple-400 font-bold italic mt-2 animate-pulse">
+                &quot;Juniors, come witness the legacy. One night to bridge the gap and celebrate the legends of &apos;26!&quot;
+              </span>
             </motion.p>
 
             {/* Premium CTA Row */}
@@ -174,8 +177,8 @@ export default function Home() {
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
               { label: "WHEN", value: "21 JUNE 2026", sub: "SUNDAY", icon: Calendar, accent: "text-amber-500", highlight: true },
-              { label: "WHERE", value: "PRIME VENUE", sub: "REVEALING SOON", icon: MapPin, accent: "text-rose-500", glow: true },
-              { label: "HOST", value: "TO BE ANNOUNCED", sub: "STAY TUNED", icon: Mic, accent: "text-cyan-500" }
+              { label: "WHERE", value: "ATHARV PALACE", sub: "UJJAIN (PREMIUM VENUE)", icon: MapPin, accent: "text-rose-500", glow: true },
+              { label: "PASSES", value: "OUT SOON", sub: "STAY TUNED", icon: Mic, accent: "text-cyan-500" }
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -223,8 +226,8 @@ export default function Home() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4 px-4">
               {[
-                { title: "DJ NIGHT", icon: Music, color: "bg-fuchsia-500", desc: "Lose yourself to absolute bass, beats, and tracks curated by our guest DJ." },
-                { title: "DANCE FLOOR", icon: Sparkles, color: "bg-amber-500", desc: "A premium energetic space designed for you to dance all night long." },
+                { title: "ELITE DJ NIGHT", icon: Music, color: "bg-fuchsia-500", desc: "Experience bone-shaking bass with our premium club-grade sound system and guest DJ." },
+                { title: "LIGHT & MAGIC", icon: Sparkles, color: "bg-amber-500", desc: "Stunning synchronized laser shows and immersive lighting to set the perfect mood." },
                 { title: "PRIME FOOD", icon: Utensils, color: "bg-rose-500", desc: "Indulge in a premium multi-cuisine dinner buffet crafted to perfection.", highlight: true },
                 { title: "NETWORKING", icon: Users, color: "bg-cyan-500", desc: "Reconnect, chat, and forge lifelong links with your classmates." },
                 { title: "MEMORIES", icon: Heart, color: "bg-purple-500", desc: "Capture beautiful moments that will stay with you long after graduation." }
@@ -269,11 +272,11 @@ export default function Home() {
                 
                 <div className="space-y-8">
                   {[
-                    "Only MIT & MITM B.Tech Batch 2026 Students Allowed",
+                    "All MIT & MITM B.Tech Students Allowed (1st to 4th Year)",
                     "Event Date: 21st June 2026 (Sunday)",
-                    "Prime Venue In Ujjain To Be Disclosed Soon",
-                    "Id will be required for registration",
-                    "Entry pass will be provided after registration which is imp for entry",
+                    "Revealed Venue: Atharv Palace, Ujjain",
+                    "College ID required for registration & entry",
+                    "Entry passes will be out soon - Stay Tuned!",
                     "Student's Organized Event for Students, No institution involved"
                   ].map((info, idx) => (
                     <motion.div
